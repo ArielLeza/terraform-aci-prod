@@ -18,7 +18,7 @@ data "aci_l3_outside" "internet" {
 
 resource "aci_tenant" "demo" {
   name        = var.tenantName
-  description = "automated by terraform"
+  description = "automated by terraform for Eyal"
 }
 
 resource "aci_vrf" "vrf1" {
