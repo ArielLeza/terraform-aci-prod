@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "TfCloudFTW"
+  default = "TfCloudForEyal"
 }
 
 variable "aciUser" {
