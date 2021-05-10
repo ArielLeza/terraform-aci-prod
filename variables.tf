@@ -2,25 +2,15 @@ variable "tenantName" {
   default = "Eyal-TFC"
 }
 
-variable "aciUser" {
-  default = "apic:backmeup\\\\admin"
-}
+variable "aciUser" {}
 
-variable "password" {
-  default = "C!sco12345Fallback"
-}
+variable "password" {}
 
-variable "aciPrivateKey" {
-  default = ""
-}
+variable "aciPrivateKey" {}
 
-variable "aciCertName" {
-  default = ""
-}
+variable "aciCertName" {}
 
-variable "aciUrl" {
-  default = "https://192.118.76.196"
-}
+variable "aciUrl" {}
 
 variable "bd1Subnet" {
   type    = string
