@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "Weizmann-TFC"
+  default = "Eyal-TFC"
 }
 
 variable "aciUser" {
@@ -24,7 +24,7 @@ variable "aciUrl" {
 
 variable "bd1Subnet" {
   type    = string
-  default = "1.1.1.1/24"
+  default = "1.1.1.254/24"
 }
 
 variable "bd2Subnet" {
