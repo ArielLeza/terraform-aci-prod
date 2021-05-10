@@ -1,16 +1,26 @@
 variable "tenantName" {
-  default = "Eyal-TFC"
+  default = "TomerTheKing-TFC"
 }
 
-variable "aciUser" {}
+variable "aciUser" {
+  default = ""
+}
 
-variable "password" {}
+variable "password" {
+  default = ""
+}
 
-variable "aciPrivateKey" {}
+variable "aciPrivateKey" {
+  default = ""
+}
 
-variable "aciCertName" {}
+variable "aciCertName" {
+  default = ""
+}
 
-variable "aciUrl" {}
+variable "aciUrl" {
+  default = ""
+}
 
 variable "bd1Subnet" {
   type    = string
