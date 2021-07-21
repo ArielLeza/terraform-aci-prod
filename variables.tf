@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "TomerTheKing-TFC"
+  default = "TomerTheKing-TFC2"
 }
 
 variable "aciUser" {
