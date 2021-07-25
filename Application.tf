@@ -1,5 +1,5 @@
 resource "aci_application_profile" "app1" {
-  tenant_dn = aci_tenant.demo.id
+  tenant_dn = aci_tenant.tenant1.id
   name      = "TfcBeLike_APP"
 }
 
