@@ -1,0 +1,101 @@
+resource "aci_external_network_instance_profile" "l3out-tfc-1_instprof" {
+        l3_outside_dn  = "${aci_l3_outside.L3Out-TFC-1_L3Out.id}"
+        description    = "%s"
+        name           = "L3Out-TFC-1_InstProf"
+        annotation     = "tag_network_profile"
+        exception_tag  = "2"
+        flood_on_encap = "disabled"
+        match_t        = "%s"
+        name_alias     = "alias_profile"
+        pref_gr_memb   = "exclude"
+        prio           = "level1"
+        target_dscp    = "exclude"
+    }
+
+resource "aci_l3_outside" "L3Out-TFC-1_L3Out" {
+        tenant_dn      = "${aci_tenant.dev_tenant.id}"
+        description    = "from terraform"
+        name           = "demo_l3out"
+        annotation     = "tag_l3out"
+        enforce_rtctrl = ["export", "import"]
+        name_alias     = "alias_out"
+        target_dscp    = "unspecified"
+    }
+resource "aci_l3out_loopback_interface_profile" "example" {
+  fabric_node_dn = "${aci_logical_node_to_fabric_node.example.id}"
+  addr           = "1.2.3.5"
+  description    = "from terraform"
+  annotation     = "example"
+  name_alias     = "example"
+}
+
+resource "aci_l3out_ospf_external_policy" "example" {
+
+  l3_outside_dn  = "${aci_l3_outside.example.id}"
+  annotation  = "example"
+  area_cost  = "1"
+  area_ctrl = "redistribute,summary"
+  area_id  = "0.0.0.1"
+  area_type = "nssa"
+  multipod_internal = "no"
+  name_alias  = "example"
+
+}
+
+resource "aci_l3out_ospf_interface_profile" "example" {
+  logical_interface_profile_dn = "${aci_logical_interface_profile.example.id}"
+  description                  = "from terraform"
+  annotation                   = "example"
+  auth_key                     = "key"
+  auth_key_id                  = "255"
+  auth_type                    = "simple"
+  name_alias                   = "example"
+  relation_ospf_rs_if_pol      = "${aci_ospf_interface_policy.example.id}"
+}
+
+resource "aci_l3out_path_attachment" "example" {
+
+  logical_interface_profile_dn  = "${aci_logical_interface_profile.example.id}"
+  target_dn  = "topology/pod-1/paths-101/pathep-[eth1/1]"
+  if_inst_t = "sub-interface"
+  addr  = "0.0.0.0"
+  annotation  = "example"
+  autostate = "disabled"
+  encap  = "vlan-1"
+  encap_scope = "ctx"
+  ipv6_dad = "disabled"
+  ll_addr  = "::"
+  mac  = "0F:0F:0F:0F:FF:FF"
+  mode = "native"
+  mtu = "inherit"
+  target_dscp = "AF11"
+
+}
+
+resource "aci_logical_node_to_fabric_node" "example" {
+
+  logical_node_profile_dn  = "${aci_logical_node_profile.example.id}"
+
+  tDn  = "example"
+  annotation  = "example"
+  config_issues  = "example"
+  rtr_id  = "example"
+  rtr_id_loop_back  = "example"
+}
+
+resource "aci_ospf_interface_policy" "fooospf_interface_policy" {
+        tenant_dn    = "${aci_tenant.dev_tenant.id}"
+        description  = "%s"
+        name         = "demo_ospfpol"
+        annotation   = "tag_ospf"
+        cost         = "unspecified"
+        ctrl         = ["advert-subnet", "bfd", "mtu-ignore", "passive"]
+        dead_intvl   = "40"
+        hello_intvl  = "10"
+        name_alias   = "alias_ospf"
+        nw_t         = "unspecified"
+        pfx_suppress = "inherit"
+        prio         = "1"
+        rexmit_intvl = "5"
+        xmit_delay   = "1"
+    }

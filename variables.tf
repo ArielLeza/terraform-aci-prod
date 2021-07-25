@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "TomerTheKing-TFC2"
+  default = "MyTerraformTenant_tn"
 }
 
 variable "aciUser" {
