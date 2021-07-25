@@ -1,5 +1,5 @@
 resource "aci_vrf" "vrf1" {
-  tenant_dn = aci_tenant.tenant1.id
+  tenant_dn = "${aci_tenant.tenant1.id}"
   name      = "VRF-Prod"
 }
 
@@ -19,13 +19,13 @@ resource "aci_bridge_domain" "bd2" {
     }
 
 resource "aci_subnet" "bd1_subnet" {
-  parent_dn = aci_bridge_domain.bd1.id
+  parent_dn = "${aci_bridge_domain.bd1.id}"
   ip        = var.bd1Subnet
   scope     = ["shared"]
 }
 
 resource "aci_subnet" "bd2_subnet" {
-  parent_dn = aci_bridge_domain.bd2.id
+  parent_dn = "${aci_bridge_domain.bd2.id}"
   ip        = var.bd2Subnet
   scope     = ["shared"]
 }
