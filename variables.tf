@@ -3,7 +3,7 @@ variable "tenantName" {
 }
 
 variable "aciUser" {
-  default = ""
+  default = "apic:backmeup\\\\admin"
 }
 
 variable "password" {
