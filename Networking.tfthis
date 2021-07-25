@@ -5,6 +5,7 @@ resource "aci_vrf" "vrf1" {
 
 resource "aci_bridge_domain" "bd1" {
         tenant_dn                   = "${aci_tenant.tenant1.id}"
+        relation_fv_rs_ctx       = aci_vrf.vrf1.id
         name                        = "bd1"
         arp_flood                   = "yes"
         host_based_routing          = "yes"
@@ -12,6 +13,7 @@ resource "aci_bridge_domain" "bd1" {
 
 resource "aci_bridge_domain" "bd2" {
         tenant_dn                   = "${aci_tenant.tenant1.id}"
+        relation_fv_rs_ctx       = aci_vrf.vrf1.id
         name                        = "bd2"
         arp_flood                   = "yes"
         host_based_routing          = "yes"

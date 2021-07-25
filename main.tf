@@ -9,5 +9,5 @@ provider "aci" {
 
 resource "aci_tenant" "tenant1" {
   name        = var.tenantName
-  description = "automated by terraform"
+  description = "automated by terraform Cloud"
 }
