@@ -11,3 +11,8 @@ resource "aci_tenant" "tenant1" {
   name        = var.tenantName
   description = "automated by terraform Cloud"
 }
+
+data "aci_vmm_domain" "vds" {
+  provider_profile_dn = var.provider_profile_dn
+  name                = var.vmmDomain
+}
