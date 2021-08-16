@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "NirTerraformCloud_tn"
+  default = "OrenB_tn"
 }
 
 variable "aciUser" {
