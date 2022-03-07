@@ -16,7 +16,3 @@ terraform {
     }
   }
 }
-
-provider "aci" {
-  # Configuration options
-}
