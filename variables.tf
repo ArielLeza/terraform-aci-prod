@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "2170_tn"
+  default = "SeSuperCloud_tn"
 }
 
 variable "aciUser" {
