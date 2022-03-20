@@ -24,12 +24,12 @@ variable "aciUrl" {
 
 variable "bd1Subnet" {
   type    = string
-  default = "1.1.1.254/24"
+  default = "172.25.101.1/24"
 }
 
 variable "bd2Subnet" {
   type    = string
-  default = "1.1.2.1/24"
+  default = "172.25.102.1/24"
 }
 
 
