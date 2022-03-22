@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "SeSuperCloud_tn"
+  default = "xxxx_tn"
 }
 
 variable "aciUser" {
@@ -24,12 +24,12 @@ variable "aciUrl" {
 
 variable "bd1Subnet" {
   type    = string
-  default = "172.25.101.1/24"
+  default = "172.24.101.1/24"
 }
 
 variable "bd2Subnet" {
   type    = string
-  default = "172.25.102.1/24"
+  default = "172.24.102.1/24"
 }
 
 
