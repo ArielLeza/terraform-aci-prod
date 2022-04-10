@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "SuperMOD2_tn"
+  default = "CX_tn"
 }
 
 variable "aciUser" {
