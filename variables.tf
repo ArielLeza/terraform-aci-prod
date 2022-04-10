@@ -1,5 +1,5 @@
 variable "tenantName" {
-  default = "CX_tn"
+  default = "CX2_tn"
 }
 
 variable "aciUser" {
